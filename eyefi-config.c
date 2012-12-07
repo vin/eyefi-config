@@ -579,7 +579,9 @@ int var_byte_len(struct var_byte_response *vb)
 }
 
 
+#ifndef offsetof
 #define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
+#endif
 int card_config_set(enum card_info_subcommand cmd, struct var_byte_response *args)
 {
 	int len;
